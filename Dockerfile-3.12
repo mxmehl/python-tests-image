@@ -1,0 +1,7 @@
+FROM python:3.12-alpine
+
+ENV PATH="$PATH:/root/.local/bin"
+
+RUN pip install --no-cache-dir pipx && \
+    pipx install poetry && \
+    pipx ensurepath
