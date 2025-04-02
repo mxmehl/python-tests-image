@@ -44,7 +44,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: Dockerfile-${{ matrix.python_version }}
+          build-args: |
+            PYTHON_VERSION=${{ matrix.python_version }}
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.python_version }}
           labels: ${{ steps.meta.outputs.labels }}
