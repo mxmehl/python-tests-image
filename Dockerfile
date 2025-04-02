@@ -11,6 +11,3 @@ RUN pip install --no-cache-dir pipx && \
 
 # Install nodejs to run basic GitHub action
 RUN apk add --no-cache nodejs
-
-RUN mkdir /app
-WORKDIR /app
